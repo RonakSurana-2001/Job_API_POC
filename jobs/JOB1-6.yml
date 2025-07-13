@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "6"
+includeSelector: "+{name: CUSTOMERS_UPPER}"
+name: JOB 1
+type: Job
