@@ -1,0 +1,50 @@
+fileVersion: 1
+id: 06de8c61-e53a-47e1-8cbc-ae8f2dc6b944
+name: CUSTOMERS_UPPER
+operation:
+  config:
+    insertStrategy: UNION
+    selectDistinct: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: SILVER
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0b1b9b2-50fa-42c1-b11a-317e0bc3967d
+          stepCounter: 06de8c61-e53a-47e1-8cbc-ae8f2dc6b944
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 81cc0d2b-36a5-4223-867e-250d4d11d302
+                stepCounter: 255cc096-29dd-4fab-815f-f786e3dc9800
+            transform: UPPER(NAME)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: BRONZE
+            nodeName: CUSTOMERS
+        join:
+          joinCondition: FROM {{ ref('BRONZE', 'CUSTOMERS') }} "CUSTOMERS"
+        name: CUSTOMERS_UPPER
+        noLinkRefs: []
+  name: CUSTOMERS_UPPER
+  overrideSQL: false
+  schema: ""
+  sqlType: View
+  type: sql
+  version: 1
+type: Node
